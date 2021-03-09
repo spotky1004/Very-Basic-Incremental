@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./breakEternityMin.js"></script>
+    <script src="./index.js" defer></script>
+    <title>Very Basic Incremental</title>
+</head>
+<body style="margin: 0; padding: 0; user-select: none; background-color: rgb(228, 209, 128); text-align: center; cursor: pointer;">
+    <table style="width: 100vw; height: 100vh;">
+        <tbody>
+            <tr>
+                <td>
+                    <div id="coinDisplay" style="font-size: 4em; font-weight: bolder; color: #fff; text-shadow: 0 0 1vh #666, 0 0 0.4vh #222;">
+                        You have x Coins
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="upgradeBtn" onclick="buyUpgrade()" style="border: 0.6vh solid rgb(88, 79, 38); background-color: rgb(241, 225, 150); color: #222; font-size: 2em; padding: 1vh 2vw; width: 30%; margin: 0 auto; border-radius: 2vh; font-weight: bold; text-shadow: 0 0 0.5vh #222; box-shadow: 0 0 0.5vh #888 inset, 0 0 0.8vh #222; white-space: nowrap;">
+                        Buy upgrade<br>Cost x Coins<br>Coin gain xx
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
