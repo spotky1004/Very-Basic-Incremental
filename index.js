@@ -10,7 +10,7 @@ document.onclick = function() {
                 new Decimal(1.03).pow(coin.add(1).log(10)).add(1)
             )
         ).mul(
-            new Decimal(10).pow(upgrade.sub(1))
+            new Decimal(10).pow(upgrade.sub(1).pow(0.9))
         )
     );
     document.getElementById("coinDisplay").innerHTML = `You have ${notation(coin)} Coins`
@@ -19,7 +19,7 @@ function buyUpgrade() {
     if (coin.lt(getUpgradeCost())) return;
     coin = coin.sub(getUpgradeCost());
     upgrade = upgrade.add(1);
-    document.getElementById("upgradeBtn").innerHTML = `Buy upgrade #${notation(upgrade)}<br>Cost ${notation(getUpgradeCost(), 3)} Coins<br>Coin Gain x${notation(new Decimal(10).pow(upgrade.sub(1)))}`;
+    document.getElementById("upgradeBtn").innerHTML = `Buy upgrade #${notation(upgrade)}<br>Cost ${notation(getUpgradeCost(), 3)} Coins<br>Coin Gain x${notation(new Decimal(10).pow(upgrade.sub(1).pow(0.9)))}`;
 }
 
 function getUpgradeCost(lv=upgrade) {
@@ -44,6 +44,6 @@ document.getElementById("coinDisplay").innerHTML = `You have ${notation(coin)} C
 
 let upgrade = loadedSave[1] || 1;
 upgrade = new Decimal(upgrade);
-document.getElementById("upgradeBtn").innerHTML = `Buy upgrade #${notation(upgrade)}<br>Cost ${notation(getUpgradeCost(), 3)} Coins<br>Coin Gain x${notation(new Decimal(10).pow(upgrade.sub(1)))}`;
+document.getElementById("upgradeBtn").innerHTML = `Buy upgrade #${notation(upgrade)}<br>Cost ${notation(getUpgradeCost(), 3)} Coins<br>Coin Gain x${notation(new Decimal(10).pow(upgrade.sub(1).pow(0.9)))}`;
 
 saveInterval = setInterval(function() {localStorage[savePoint] = [coin, upgrade]}, 5000);
