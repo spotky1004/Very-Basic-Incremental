@@ -24,7 +24,7 @@ function buyUpgrade() {
 
 function getUpgradeCost(lv=upgrade) {
     lv = new Decimal(lv);
-    return new Decimal(1e6).pow(lv).pow(lv.pow(1/3));
+    return new Decimal(1e6).pow(lv).pow(lv.pow(1/3)).div(1e3);
 }
 
 function notation(num=0, dim=3) {
