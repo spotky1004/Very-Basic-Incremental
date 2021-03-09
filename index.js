@@ -5,7 +5,7 @@ document.onclick = function() {
         coin.div(
             new Decimal.max(
                 1,
-                coin.add(1).log(3).pow(4)
+                coin.add(1).log(10).pow(3)
             ).mul(
                 new Decimal(1.03).pow(coin.add(1).log(10)).add(1)
             )
